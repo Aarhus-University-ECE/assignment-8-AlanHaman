@@ -8,7 +8,7 @@ void init_queue(queue *q) {
     // Add your init_queue
     // creating a queue
     q->front = NULL;
-    q->back = NULL;
+    q->rear = NULL;
 
     // size of queue is 0
     q->size = 0;
@@ -36,9 +36,9 @@ void enqueue(queue *q, int x) {
         q->front = backNew;
     } else {
         // If q is not empty it needs to point to backNew
-        q->back->next = backNew;
+        q->rear->next = backNew;
     }
-    q->back = backNew;
+    q->rear = backNew;
     q->size = q->size + 1;
 }
 
